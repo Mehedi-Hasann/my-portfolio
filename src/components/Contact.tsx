@@ -2,14 +2,29 @@
 
 import { motion } from "framer-motion";
 import React, { useState } from "react";
+import { sendEmail } from "@/app/actions/sendEmail";
 
 export default function Contact() {
   const [isSent, setIsSent] = useState(false);
+  const [isPending, setIsPending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSent(true);
-    console.log("Form submitted successfully!");
+    setIsPending(true);
+    setError(null);
+
+    const formData = new FormData(e.currentTarget);
+    const result = await sendEmail(formData);
+
+    setIsPending(false);
+
+    if (result.success) {
+      setIsSent(true);
+      console.log("Form submitted successfully!");
+    } else {
+      setError(result.error || "An unexpected error occurred.");
+    }
   };
 
   const contactInfo = [
@@ -61,10 +76,10 @@ export default function Contact() {
           >
             <div>
               <h2 className="text-5xl md:text-7xl font-bold mb-8 tracking-tight font-space-grotesk text-on-surface">
-                Let's <span className="text-gradient">Collaborate</span>
+                Let&apos;s <span className="text-gradient">Collaborate</span>
               </h2>
               <p className="text-on-surface-variant text-lg md:text-xl opacity-80 leading-relaxed max-w-md">
-                Have a vision for a project? Let's architect the future together with precision and passion.
+                Have a vision for a project? Let&apos;s architect the future together with precision and passion.
               </p>
             </div>
 
@@ -104,7 +119,7 @@ export default function Contact() {
                   </svg>
                 </div>
                 <h3 className="text-3xl font-bold text-on-surface font-space-grotesk">Message Sent!</h3>
-                <p className="text-on-surface-variant text-lg">Thank you for reaching out. I'll get back to you shortly.</p>
+                <p className="text-on-surface-variant text-lg">Thank you for reaching out. I&apos;ll get back to you shortly.</p>
                 <button 
                   onClick={() => setIsSent(false)}
                   className="text-blue-400 font-bold uppercase tracking-widest text-sm hover:text-blue-300 transition-colors pt-4"
@@ -117,11 +132,12 @@ export default function Contact() {
                 onSubmit={handleSubmit}
                 className="glass-card rounded-[2.5rem] p-10 md:p-12 border border-white/10 space-y-8 shadow-2xl relative"
               >
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="space-y-3">
                     <label className="text-[10px] font-bold text-slate-500 uppercase tracking-widest px-2">Your Name</label>
                     <input 
                       required
+                      name="name"
                       className="w-full bg-white/5 border border-white/10 focus:border-blue-500/50 focus:bg-white/10 rounded-2xl px-6 py-4 text-on-surface transition-all outline-none" 
                       placeholder="John Doe" 
                       type="text" 
@@ -131,33 +147,53 @@ export default function Contact() {
                     <label className="text-[10px] font-bold text-slate-500 uppercase tracking-widest px-2">Email Address</label>
                     <input 
                       required
+                      name="email"
                       className="w-full bg-white/5 border border-white/10 focus:border-blue-500/50 focus:bg-white/10 rounded-2xl px-6 py-4 text-on-surface transition-all outline-none" 
                       placeholder="john@example.com" 
                       type="email" 
                     />
                   </div>
                 </div>
+
                 <div className="space-y-3">
                   <label className="text-[10px] font-bold text-slate-500 uppercase tracking-widest px-2">Message</label>
                   <textarea 
                     required
+                    name="message"
                     className="w-full bg-white/5 border border-white/10 focus:border-blue-500/50 focus:bg-white/10 rounded-2xl px-6 py-4 text-on-surface transition-all outline-none resize-none" 
                     placeholder="How can I help you today?" 
                     rows={5}
                   ></textarea>
                 </div>
+
+                {error && (
+                  <p className="text-red-400 text-sm px-2 animate-pulse">{error}</p>
+                )}
                 
                 <motion.button 
-                  whileHover={{ scale: 1.02, boxShadow: "0 0 30px rgba(59, 130, 246, 0.4)" }}
-                  whileTap={{ scale: 0.98 }}
+                  whileHover={{ scale: isPending ? 1 : 1.02, boxShadow: isPending ? "none" : "0 0 30px rgba(59, 130, 246, 0.4)" }}
+                  whileTap={{ scale: isPending ? 1 : 0.98 }}
                   type="submit"
-                  className="w-full bg-blue-600 hover:bg-blue-500 text-on-surface font-bold py-5 px-8 rounded-2xl transition-all duration-300 shadow-xl text-lg flex items-center justify-center gap-3"
+                  disabled={isPending}
+                  className={`w-full ${isPending ? 'bg-blue-600/50 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-500'} text-on-surface font-bold py-5 px-8 rounded-2xl transition-all duration-300 shadow-xl text-lg flex items-center justify-center gap-3`}
                 >
-                  Send Secure Message
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="22" y1="2" x2="11" y2="13"></line>
-                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                  </svg>
+                  {isPending ? (
+                    <>
+                      <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      Send Message
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                      </svg>
+                    </>
+                  )}
                 </motion.button>
               </form>
             )}

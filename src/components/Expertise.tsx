@@ -7,7 +7,7 @@ export default function Expertise() {
   const skills = [
     { 
       name: 'Frontend Development', 
-      desc: ['React & Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+      desc: ['JavaScript', 'React', 'Next.js', 'Tailwind CSS'],
       color: 'text-blue-400',
       icon: (
         <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -15,7 +15,7 @@ export default function Expertise() {
     },
     { 
       name: 'Backend Development', 
-      desc: ['Node.js & Express', 'Python', 'Better Auth', 'RESTful APIs'],
+      desc: ['Node.js','Express.js','TypeScript', 'RESTful APIs'],
       color: 'text-green-400',
       icon: (
         <path d="M4 17h16M4 12h16M4 7h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

@@ -160,7 +160,7 @@ export default function Hero() {
 
             <div className="relative w-full h-full rounded-full p-4 glass-card border-white/10 overflow-hidden group-hover:border-blue-500/30 transition-colors duration-700">
               <img 
-                src="/mehedi_image.png" 
+                src=".././portfolio_img.png" 
                 alt="Mehedi Hasan" 
                 className="w-full h-full object-cover rounded-full grayscale-[20%] group-hover:grayscale-0 transition-all duration-700"
               />
@@ -177,17 +177,17 @@ export default function Hero() {
               }}
               className="absolute -top-4 -left-8 md:-left-12 glass-card p-4 rounded-2xl flex items-center gap-4 z-20 border border-white/10 shadow-[0_0_20px_rgba(59,130,246,0.2)]"
             >
-              <div className="w-10 h-10 flex items-center justify-center bg-white/5 rounded-xl">
+              <a href="https://codeforces.com/profile/Mehethe_hasan" className="w-10 h-10 flex items-center justify-center bg-white/5 rounded-xl">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <rect x="3" y="11" width="4" height="9" fill="#BFC9D2"/>
                   <rect x="10" y="3" width="4" height="17" fill="#3B82F6"/>
                   <rect x="17" y="7" width="4" height="13" fill="#EF4444"/>
                 </svg>
-              </div>
-              <div>
+              </a>
+              <a href="https://codeforces.com/profile/Mehethe_hasan">
                 <p className="text-[10px] font-bold text-blue-400 uppercase tracking-widest">Codeforces</p>
                 <p className="text-on-surface font-bold text-sm">350+ Solved</p>
-              </div>
+              </a>
             </motion.div>
 
             {/* Card 2: CodeChef */}
@@ -199,7 +199,7 @@ export default function Hero() {
               }}
               className="absolute bottom-12 -right-8 md:-right-12 glass-card p-4 rounded-2xl flex items-center gap-4 z-20 border border-white/10 shadow-[0_0_20px_rgba(236,72,153,0.2)]"
             >
-              <div className="w-12 h-12 flex items-center justify-center bg-white/5 rounded-xl">
+              <a href="https://www.codechef.com/users/mehedi_067" className="w-12 h-12 flex items-center justify-center bg-white/5 rounded-xl">
                 <svg width="40" height="40" viewBox="0 0 100 100" fill="none">
                   <path d="M50 10C40 10 32 18 32 28C32 30 33 32 34 34L30 45H70L66 34C67 32 68 30 68 28C68 18 60 10 50 10Z" fill="#F0E6D2" stroke="#5C3B1B" strokeWidth="2"/>
                   <path d="M35 45L38 55H62L65 45" fill="#F0E6D2" stroke="#5C3B1B" strokeWidth="2"/>
@@ -209,11 +209,11 @@ export default function Hero() {
                   <circle cx="46" cy="68" r="1.5" fill="#5C3B1B"/>
                   <circle cx="54" cy="68" r="1.5" fill="#5C3B1B"/>
                 </svg>
-              </div>
-              <div>
+              </a>
+              <a href="https://www.codechef.com/users/mehedi_067">
                 <p className="text-[10px] font-bold text-pink-400 uppercase tracking-widest">CodeChef</p>
                 <p className="text-on-surface font-bold text-sm">3★ (1615 Max)</p>
-              </div>
+              </a>
             </motion.div>
           </motion.div>
         </div>
