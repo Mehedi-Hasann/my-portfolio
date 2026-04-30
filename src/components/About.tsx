@@ -3,17 +3,9 @@
 import { motion } from "framer-motion";
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function About() {
-  const techStack = [
-    { name: "TypeScript", color: "text-[#3178C6]", bg: "bg-[#3178C6]/10", border: "border-[#3178C6]/20" },
-    { name: "Next.js", color: "text-on-surface", bg: "bg-white/5", border: "border-white/10" },
-    { name: "React", color: "text-[#61DAFB]", bg: "bg-[#61DAFB]/10", border: "border-[#61DAFB]/20" },
-    { name: "Node.js", color: "text-[#339933]", bg: "bg-[#339933]/10", border: "border-[#339933]/20" },
-    { name: "Prisma", color: "text-[#2D3748]", bg: "bg-[#2D3748]/10", border: "border-[#2D3748]/20" },
-    { name: "PostgreSQL", color: "text-[#336791]", bg: "bg-[#336791]/10", border: "border-[#336791]/20" },
-  ];
-
   return (
     <section className="relative py-32 px-6 md:px-12 lg:px-24 max-w-[1400px] mx-auto overflow-hidden font-poppins" id="about">
       {/* Background Orbs */}
@@ -37,15 +29,18 @@ export default function About() {
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="lg:col-span-4 glass-card rounded-[3.5rem] p-10 border border-white/10 relative group overflow-hidden"
+          className="lg:col-span-4 glass-card rounded-[3.5rem] p-12 border border-white/10 relative group overflow-hidden"
         >
           <div className="absolute inset-0 bg-gradient-to-b from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
           
           <div className="relative w-full aspect-square rounded-[3rem] overflow-hidden mb-12 glass-card border border-white/10 group">
-            <img 
+            <Image 
               src="/portfolio_img.png" 
-              alt="Md Mehedi Hasan" 
-              className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
+              alt="Mehedi Hasan"
+              fill
+              sizes="(max-width: 1024px) 100vw, 33vw"
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+              priority
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent pointer-events-none"></div>
           </div>
@@ -114,17 +109,17 @@ export default function About() {
         
 
         {/* Right: Content Area */}
-        <div className="lg:col-span-8 flex flex-col gap-12">
+        <div className="lg:col-span-8 flex flex-col gap-8">
           {/* Bio Area */}
           <motion.article 
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="glass-card rounded-[3.5rem] p-12 md:p-16 border border-white/5 relative overflow-hidden group"
+            className="glass-card rounded-[3.5rem] p-8 md:p-16 border border-white/5 relative overflow-hidden group"
           >
             <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 rounded-full blur-[100px] -z-10 group-hover:bg-blue-500/10 transition-colors duration-700"></div>
             <h4 className="text-3xl md:text-5xl font-bold mb-10 text-on-surface leading-tight font-space-grotesk">Professional Profile</h4>
-            <div className="space-y-8 text-on-surface-variant text-lg md:text-xl leading-relaxed opacity-90">
+            <div className="space-y-5 text-on-surface-variant text-lg md:text-xl leading-relaxed opacity-90">
               <p>
                 Hi! I&apos;m <span className="text-on-surface font-bold">Md Mehedi Hasan</span>, a visionary developer and dedicated Computer Science student at 
                 <span className="text-blue-400 font-semibold"> Chittagong University of Engineering & Technology (CUET)</span>. 
@@ -135,31 +130,11 @@ export default function About() {
                 I approach every project with a mindset geared towards efficiency, scalability, and elegant architecture. My expertise spans the 
                 modern web stack, from <span className="text-on-surface">Next.js</span> and <span className="text-on-surface">TypeScript</span> to <span className="text-on-surface">Prisma</span> and <span className="text-on-surface">PostgreSQL</span>.
               </p>
-            </div>
-          </motion.article>
-
-          {/* Technical Core */}
-          <motion.article 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="glass-card p-12 md:p-16 rounded-[3.5rem] border border-white/5 relative overflow-hidden group"
-          >
-            <div className="absolute top-0 right-0 w-64 h-64 bg-pink-500/5 rounded-full blur-[100px] -z-10 group-hover:bg-pink-500/10 transition-colors duration-700"></div>
-            <h4 className="text-3xl md:text-5xl font-bold mb-10 text-on-surface font-space-grotesk">Technical Core</h4>
-            <div className="flex flex-wrap gap-4">
-              {techStack.map((tech) => (
-                <span 
-                  key={tech.name}
-                  className={`px-6 py-3 rounded-2xl text-base font-bold border ${tech.border} ${tech.bg} ${tech.color} transition-all duration-300 hover:scale-105 hover:shadow-lg`}
-                >
-                  {tech.name}
-                </span>
-              ))}
-              <span className="px-6 py-3 rounded-2xl text-base font-bold border border-white/10 bg-white/5 text-on-surface transition-all duration-300 hover:scale-105">Python</span>
-              <span className="px-6 py-3 rounded-2xl text-base font-bold border border-white/10 bg-white/5 text-on-surface transition-all duration-300 hover:scale-105">Better Auth</span>
-              <span className="px-6 py-3 rounded-2xl text-base font-bold border border-white/10 bg-white/5 text-on-surface transition-all duration-300 hover:scale-105">MySQL</span>
-              <span className="px-6 py-3 rounded-2xl text-base font-bold border border-white/10 bg-white/5 text-on-surface transition-all duration-300 hover:scale-105">Stripe</span>
+              <p>
+                On the backend, I specialize in building robust, high-performance architectures using <span className="text-blue-400 font-semibold">Node.js</span> and <span className="text-on-surface font-bold">NestJS</span>. 
+                I am deeply experienced in designing relational and non-relational database schemas with <span className="text-blue-400 font-semibold">PostgreSQL</span> and <span className="text-green-400 font-semibold">MongoDB</span>, 
+                often leveraging <span className="text-on-surface">Prisma ORM</span> for type-safe data management.
+              </p>
             </div>
           </motion.article>
         </div>

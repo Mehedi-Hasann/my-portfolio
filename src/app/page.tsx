@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import CoreStack from "@/components/CoreStack";
 import Expertise from "@/components/Expertise";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
@@ -12,6 +13,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
+      <CoreStack />
       <Expertise />
       <Projects />
       <Contact />

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -44,11 +45,13 @@
 
 @layer utilities {
   .glass-card {
-    @apply bg-surface/70 backdrop-blur-[20px] border border-white/5 shadow-[0_8px_32px_0_rgba(0,0,0,0.1)] transition-all duration-300;
+    @apply bg-surface/70 backdrop-blur-[20px] border border-white/5 transition-all duration-300;
+    box-shadow: 0 8px 32px 0 var(--tw-shadow-color, rgba(0,0,0,0.1));
   }
 
   .dark .glass-card {
-    @apply bg-surface/70 border-white/5 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)];
+    @apply bg-surface/70 border-white/5;
+    box-shadow: 0 8px 32px 0 var(--tw-shadow-color, rgba(0,0,0,0.5));
   }
 
   .glass-card:hover {

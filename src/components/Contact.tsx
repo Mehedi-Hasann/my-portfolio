@@ -55,7 +55,7 @@ export default function Contact() {
   ];
 
   return (
-    <section className="relative py-32 px-6 md:px-12 lg:px-24 max-w-[1400px] mx-auto overflow-hidden font-poppins" id="contact">
+    <section className="relative py-10 px-6 md:px-12 lg:px-24 max-w-[1400px] mx-auto overflow-hidden font-poppins" id="contact">
       {/* Decorative Orb */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[120px] -z-10"></div>
 
@@ -132,7 +132,7 @@ export default function Contact() {
                 onSubmit={handleSubmit}
                 className="glass-card rounded-[2.5rem] p-10 md:p-12 border border-white/10 space-y-8 shadow-2xl relative"
               >
-                <div className="grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="space-y-3">
                     <label className="text-[10px] font-bold text-slate-500 uppercase tracking-widest px-2">Your Name</label>
                     <input 

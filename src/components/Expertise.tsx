@@ -59,29 +59,9 @@ export default function Expertise() {
   } as const;
 
   return (
-    <section className="relative py-32 px-6 md:px-12 lg:px-24 max-w-[1400px] mx-auto overflow-hidden font-poppins" id="expertise">
+    <section className="relative pb-24 pt-0 px-6 md:px-12 lg:px-24 max-w-[1400px] mx-auto overflow-hidden font-poppins" id="expertise">
       {/* Decorative Blur */}
       <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[120px] -z-10"></div>
-
-      <header className="mb-24 text-center">
-        <motion.h2 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-5xl md:text-7xl font-bold mb-8 tracking-tight font-space-grotesk text-on-surface"
-        >
-          Core <span className="text-gradient">Expertise</span>
-        </motion.h2>
-        <motion.p 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
-          className="text-on-surface-variant max-w-2xl mx-auto text-lg md:text-xl opacity-80 leading-relaxed"
-        >
-          Mastering the modern stack to architect seamless, scalable digital solutions that drive global transformation.
-        </motion.p>
-      </header>
 
       <motion.div 
         variants={containerVariants}
