@@ -65,7 +65,7 @@ export default function Hero() {
 
   return (
     <section 
-      className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-background font-poppins" 
+      className="relative min-h-screen flex items-center pt-30 overflow-hidden bg-background font-poppins" 
       id="hero"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
@@ -122,7 +122,8 @@ export default function Hero() {
             robust, high-performance server-side systems and scalable full-stack applications, bridging the gap between complex algorithmic logic and seamless user experiences.
           </motion.p>
 
-          <motion.div variants={itemVariants} className="flex flex-wrap gap-6 pt-4">
+          <motion.a variants={itemVariants} className="flex flex-wrap gap-3 pt-2">
+            
             <motion.a 
               href="#about"
               whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(59, 130, 246, 0.4)" }}
@@ -141,11 +142,30 @@ export default function Hero() {
               href="#contact"
               whileHover={{ scale: 1.05, backgroundColor: "rgba(59, 130, 246, 0.1)" }}
               whileTap={{ scale: 0.98 }}
-              className="px-10 py-4 glass-card text-on-surface font-semibold rounded-full border border-white/10 hover:border-blue-400/50 transition-all flex items-center justify-center"
+              className="px-10 py-2 glass-card text-on-surface font-semibold rounded-full border border-white/10 hover:border-blue-400/50 transition-all flex items-center justify-center"
             >
               Let&apos;s Collaborate
             </motion.a>
-          </motion.div>
+            <motion.a
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="pt-2 w-9/12"
+                      >
+                        <a 
+                          href="/Mehedi_Hasan.pdf" 
+                          target="_blank"
+                          className="w-full rounded-full inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-pink-600 text-on-surface font-bold rounded-2xl shadow-lg hover:shadow-blue-500/20 transition-all hover:scale-[1.02] active:scale-95 text-sm uppercase tracking-widest gap-3"
+                        >
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                          </svg>
+                          Download Resume
+                        </a>
+                      </motion.a>
+          </motion.a>
 
         </div>
 
@@ -161,7 +181,7 @@ export default function Hero() {
 
             <div className="relative w-full h-full rounded-full p-4 glass-card border-white/10 overflow-hidden group-hover:border-blue-500/30 transition-colors duration-700">
               <Image 
-                src="/portfolio_img.png" 
+                src="/aa.png" 
                 alt="Mehedi Hasan" 
                 fill
                 className="object-cover rounded-full grayscale-[20%] group-hover:grayscale-0 transition-all duration-700"
