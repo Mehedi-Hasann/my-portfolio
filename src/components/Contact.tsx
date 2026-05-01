@@ -130,10 +130,10 @@ export default function Contact() {
             ) : (
               <form
                 onSubmit={handleSubmit}
-                className="glass-card rounded-[2.5rem] p-10 md:p-12 border border-white/10 space-y-8 shadow-2xl relative"
+                className="glass-card rounded-[2.5rem] md:p-12 border border-white/10 space-y-8 shadow-2xl relative"
               >
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="space-y-3">
+                <div className="grid-cols-1 md:grid-cols-2 gap-8 ">
+                  <div className="space-y-3 mb-5">
                     <label className="text-[10px] font-bold text-slate-500 uppercase tracking-widest px-2">Your Name</label>
                     <input 
                       required
