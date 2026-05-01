@@ -31,7 +31,7 @@ export default function Expertise() {
     },
     { 
       name: 'Modern Security', 
-      desc: ['JWT & Bcrypt', 'OAuth Integration', 'Stripe Payments', 'SSL/TLS'],
+      desc: ['JWT', 'Bcrypt', 'OAuth Integration', 'Stripe Payments'],
       color: 'text-pink-400',
       icon: (
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

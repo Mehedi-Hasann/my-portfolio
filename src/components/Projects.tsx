@@ -9,7 +9,7 @@ export default function Projects() {
     {
       title: 'MediStore',
       desc: 'An enterprise-grade online medicine shop with role-based access for Customers, Sellers, and Admins.',
-      tags: ['Next.js', 'Express.js', 'Prisma', 'PostgreSQL', 'Better Auth'],
+      tags: ['Next.js', 'Express.js', 'Prisma', 'PostgreSQL', 'Better Auth','Stripe'],
       image: '/medi_image.png',
       color: 'from-blue-600 to-cyan-400',
       github: 'https://github.com/Mehedi-Hasann/MediStore-Frontend',
