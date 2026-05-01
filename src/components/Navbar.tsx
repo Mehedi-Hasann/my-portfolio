@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { Sun, Moon } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export default function Navbar() {
   const { theme, setTheme } = useTheme();
@@ -21,10 +22,20 @@ export default function Navbar() {
       <div className="flex justify-between items-center max-w-[1200px] mx-auto px-6 h-20">
         <motion.div 
           whileHover={{ scale: 1.05 }}
-          className="text-2xl font-bold tracking-tighter text-white font-space-grotesk cursor-pointer flex items-center gap-2"
+          className="text-2xl font-bold tracking-tighter text-white font-space-grotesk cursor-pointer flex items-center gap-3"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
-          Mehedi <span className="text-blue-500">Hasan</span>
+          <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-blue-500/30 shadow-[0_0_15px_rgba(59,130,246,0.2)] group">
+            <Image 
+              src="/portfolio_img.png" 
+              alt="Logo" 
+              fill 
+              className="object-cover group-hover:scale-110 transition-transform duration-300"
+            />
+          </div>
+          <span className="hidden sm:block">
+            Mehedi <span className="text-blue-500">Hasan</span>
+          </span>
         </motion.div>
         
         <div className="hidden md:flex items-center gap-8">

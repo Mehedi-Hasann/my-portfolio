@@ -20,8 +20,12 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "Mehedi Hasan | Competitive Programmer & Full-Stack Developer",
-  description: "Portfolio of Mehedi Hasan, a CSE student at Daffodil International University specializing in competitive programming and high-performance web development.",
+  description: "Portfolio of Mehedi Hasan, a CSE student at Chittagong University of Engineering and Technology (CUET) specializing in competitive programming and high-performance web development.",
+  icons: {
+    icon: "./logo.png",
+  },
 };
+
 
 import { ThemeProvider } from "@/components/ThemeProvider";
 
