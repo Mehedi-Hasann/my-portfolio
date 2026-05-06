@@ -20,29 +20,29 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-white/5 shadow-[0_0_15px_rgba(59,130,246,0.05)]">
       <div className="flex justify-between items-center max-w-[1200px] mx-auto px-6 h-20">
-        <motion.div 
-          whileHover={{ scale: 1.05 }}
-          className="text-2xl font-bold tracking-tighter text-white font-space-grotesk cursor-pointer flex items-center gap-3"
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        <Link 
+          href="/"
+          className="text-2xl font-bold tracking-tighter text-on-surface font-space-grotesk cursor-pointer flex items-center gap-3"
         >
           <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-blue-500/30 shadow-[0_0_15px_rgba(59,130,246,0.2)] group">
             <Image 
               src="/portfolio_img.png" 
               alt="Logo" 
               fill 
+              sizes="40px"
               className="object-cover group-hover:scale-110 transition-transform duration-300"
             />
           </div>
           <span className="hidden sm:block">
             Mehedi <span className="text-blue-500">Hasan</span>
           </span>
-        </motion.div>
+        </Link>
         
         <div className="hidden md:flex items-center gap-8">
-          <Link href="#about" className="text-sm text-on-surface-variant hover:text-blue-400 transition-colors font-space-grotesk font-bold tracking-tight uppercase">About</Link>
-          <Link href="#projects" className="text-sm text-on-surface-variant hover:text-blue-400 transition-colors font-space-grotesk font-bold tracking-tight uppercase">Projects</Link>
-          <Link href="#expertise" className="text-sm text-on-surface-variant hover:text-blue-400 transition-colors font-space-grotesk font-bold tracking-tight uppercase">Expertise</Link>
-          <Link href="#contact" className="text-sm text-on-surface-variant hover:text-blue-400 transition-colors font-space-grotesk font-bold tracking-tight uppercase">Contact</Link>
+          <Link href="/#about" className="text-sm text-on-surface-variant hover:text-blue-400 transition-colors font-space-grotesk font-bold tracking-tight uppercase">About</Link>
+          <Link href="/#projects" className="text-sm text-on-surface-variant hover:text-blue-400 transition-colors font-space-grotesk font-bold tracking-tight uppercase">Projects</Link>
+          <Link href="/#expertise" className="text-sm text-on-surface-variant hover:text-blue-400 transition-colors font-space-grotesk font-bold tracking-tight uppercase">Expertise</Link>
+          <Link href="/#contact" className="text-sm text-on-surface-variant hover:text-blue-400 transition-colors font-space-grotesk font-bold tracking-tight uppercase">Contact</Link>
           
           <div className="h-6 w-px bg-white/10 mx-2"></div>
 

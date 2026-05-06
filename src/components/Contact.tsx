@@ -138,7 +138,7 @@ export default function Contact() {
                     <input 
                       required
                       name="name"
-                      className="w-full bg-white/5 border border-white/10 focus:border-blue-500/50 focus:bg-white/10 rounded-2xl px-6 py-4 text-on-surface transition-all outline-none" 
+                      className="w-full bg-on-surface/5 border border-on-surface/10 focus:border-blue-500/50 focus:bg-on-surface/10 rounded-2xl px-6 py-4 text-on-surface transition-all outline-none" 
                       placeholder="John Doe" 
                       type="text" 
                     />
@@ -148,7 +148,7 @@ export default function Contact() {
                     <input 
                       required
                       name="email"
-                      className="w-full bg-white/5 border border-white/10 focus:border-blue-500/50 focus:bg-white/10 rounded-2xl px-6 py-4 text-on-surface transition-all outline-none" 
+                      className="w-full bg-on-surface/5 border border-on-surface/10 focus:border-blue-500/50 focus:bg-on-surface/10 rounded-2xl px-6 py-4 text-on-surface transition-all outline-none" 
                       placeholder="john@example.com" 
                       type="email" 
                     />
@@ -160,7 +160,7 @@ export default function Contact() {
                   <textarea 
                     required
                     name="message"
-                    className="w-full bg-white/5 border border-white/10 focus:border-blue-500/50 focus:bg-white/10 rounded-2xl px-6 py-4 text-on-surface transition-all outline-none resize-none" 
+                    className="w-full bg-on-surface/5 border border-on-surface/10 focus:border-blue-500/50 focus:bg-on-surface/10 rounded-2xl px-6 py-4 text-on-surface transition-all outline-none resize-none" 
                     placeholder="How can I help you today?" 
                     rows={5}
                   ></textarea>
@@ -175,7 +175,7 @@ export default function Contact() {
                   whileTap={{ scale: isPending ? 1 : 0.98 }}
                   type="submit"
                   disabled={isPending}
-                  className={`w-full ${isPending ? 'bg-blue-600/50 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-500'} text-on-surface font-bold py-5 px-8 rounded-2xl transition-all duration-300 shadow-xl text-lg flex items-center justify-center gap-3`}
+                  className={`w-full ${isPending ? 'bg-blue-600/50 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-500'} text-white font-bold py-5 px-8 rounded-2xl transition-all duration-300 shadow-xl text-lg flex items-center justify-center gap-3`}
                 >
                   {isPending ? (
                     <>

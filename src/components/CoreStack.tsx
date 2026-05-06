@@ -9,11 +9,8 @@ import {
   SiNextdotjs,
   SiNodedotjs,
   SiExpress,
-  SiMongodb,
   SiPostgresql,
   SiPrisma,
-  SiDocker,
-  SiKubernetes,
   SiTailwindcss,
   SiGit,
   SiC,
@@ -22,24 +19,23 @@ import {
   SiJsonwebtokens,
   SiAuth0,
 } from "react-icons/si";
-import { FaAws } from "react-icons/fa";
 
 const techStack = [
   { name: "C", icon: <SiC />, color: "text-blue-600", glow: "shadow-blue-600/20" },
   { name: "C++", icon: <SiCplusplus />, color: "text-blue-500", glow: "shadow-blue-500/20" },
-  { name: "JavaScript", icon: <SiJavascript />, color: "text-yellow-400", glow: "shadow-yellow-400/20" },
-  { name: "TypeScript", icon: <SiTypescript />, color: "text-blue-400", glow: "shadow-blue-400/20" },
-  { name: "React", icon: <SiReact />, color: "text-cyan-400", glow: "shadow-cyan-400/20" },
-  { name: "Next.js", icon: <SiNextdotjs />, color: "text-white", glow: "shadow-white/20" },
-  { name: "Node.js", icon: <SiNodedotjs />, color: "text-green-500", glow: "shadow-green-500/20" },
-  { name: "Express", icon: <SiExpress />, color: "text-gray-300", glow: "shadow-gray-300/20" },
-  { name: "PostgreSQL", icon: <SiPostgresql />, color: "text-blue-300", glow: "shadow-blue-300/20" },
-  { name: "Prisma ORM", icon: <SiPrisma />, color: "text-white", glow: "shadow-white/20" },
-  { name: "Tailwind CSS", icon: <SiTailwindcss />, color: "text-cyan-300", glow: "shadow-cyan-300/20" },
+  { name: "JavaScript", icon: <SiJavascript />, color: "text-yellow-500", glow: "shadow-yellow-500/20" },
+  { name: "TypeScript", icon: <SiTypescript />, color: "text-blue-500", glow: "shadow-blue-500/20" },
+  { name: "React", icon: <SiReact />, color: "text-cyan-500", glow: "shadow-cyan-500/20" },
+  { name: "Next.js", icon: <SiNextdotjs />, color: "text-on-surface", glow: "shadow-on-surface/20" },
+  { name: "Node.js", icon: <SiNodedotjs />, color: "text-green-600", glow: "shadow-green-600/20" },
+  { name: "Express", icon: <SiExpress />, color: "text-gray-500", glow: "shadow-gray-500/20" },
+  { name: "PostgreSQL", icon: <SiPostgresql />, color: "text-blue-600", glow: "shadow-blue-600/20" },
+  { name: "Prisma ORM", icon: <SiPrisma />, color: "text-on-surface", glow: "shadow-on-surface/20" },
+  { name: "Tailwind CSS", icon: <SiTailwindcss />, color: "text-cyan-600", glow: "shadow-cyan-600/20" },
   { name: "Better Auth", icon: <SiAuth0 />, color: "text-orange-600", glow: "shadow-orange-600/20" },
-  { name: "Stripe", icon: <SiStripe />, color: "text-blue-400", glow: "shadow-blue-400/20" },
-  { name: "JWT", icon: <SiJsonwebtokens />, color: "text-pink-500", glow: "shadow-pink-500/20" },
-  { name: "Git", icon: <SiGit />, color: "text-orange-500", glow: "shadow-orange-500/20" }
+  { name: "Stripe", icon: <SiStripe />, color: "text-indigo-600", glow: "shadow-indigo-600/20" },
+  { name: "JWT", icon: <SiJsonwebtokens />, color: "text-pink-600", glow: "shadow-pink-500/20" },
+  { name: "Git", icon: <SiGit />, color: "text-orange-600", glow: "shadow-orange-500/20" }
 ];
 
 const containerVariants = {
@@ -99,9 +95,9 @@ export default function CoreStack() {
               whileHover={{ y: -8, scale: 1.05 }}
               className="flex flex-col items-center group w-full"
             >
-              <div className={`w-20 h-20 md:w-24 md:h-24 rounded-full glass-card flex items-center justify-center text-4xl md:text-5xl transition-all duration-500 group-hover:${tech.glow} border border-white/5 relative overflow-hidden`}>
-                <div className={`absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
-                <span className={`${tech.color} transition-all duration-500 group-hover:scale-110 drop-shadow-sm`}>
+              <div className={`p-8 rounded-3xl glass-card border border-white/10 transition-all duration-500 group relative overflow-hidden h-full shadow-lg flex items-center justify-center`}>
+                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <span className={`${tech.color} transition-all duration-500 group-hover:scale-110 drop-shadow-sm text-4xl md:text-5xl relative z-10`}>
                   {tech.icon}
                 </span>
               </div>
