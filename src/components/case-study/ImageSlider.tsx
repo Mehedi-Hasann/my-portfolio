@@ -87,6 +87,7 @@ export default function ImageSlider({ images }: Props) {
               src={images[currentIndex].src}
               alt={images[currentIndex].alt}
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
               className="object-cover select-none"
               priority
             />
