@@ -17,15 +17,16 @@ export default function Projects() {
       live: 'https://medi-store-one.vercel.app/',
       caseStudy: '/projects/healthplus'
     },
-    // {
-    //   title: 'AlgoFlow',
-    //   desc: 'A high-performance algorithm visualization engine designed to demonstrate complex data structures and dynamic programming concepts with interactive neural paths.',
-    //   tags: ['TypeScript', 'C++', 'React', 'Framer Motion'],
-    //   image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000',
-    //   color: 'from-pink-500 to-purple-500',
-    //   github: 'https://github.com/Mehedi-Hasann',
-    //   live: '#'
-    // }
+    {
+      title: 'Green Pulse',
+      desc: 'A comprehensive environmental community platform featuring interactive challenges, user progress tracking and robust administrative dashboards.',
+      tags: ['Next.js', 'Express.js', 'Prisma', 'PostgreSQL', 'Recharts'],
+      image: '/greenpulse.png',
+      color: 'from-green-600 to-emerald-400',
+      github: 'https://github.com/Mehedi-Hasann/green-pulse-frontend',
+      live: 'https://green-pulse-frontend.vercel.app/',
+      caseStudy: '/projects/greenpulse'
+    }
   ] as const;
 
   const containerVariants = {
@@ -116,12 +117,18 @@ export default function Projects() {
                 
                 
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 backdrop-blur-[2px] bg-blue-500/5">
-                  <Link
-                    href={project.caseStudy}
-                    className="px-8 py-3 bg-white text-black font-bold rounded-full scale-90 group-hover:scale-100 transition-transform duration-500 shadow-xl"
-                  >
-                    View Case Study
-                  </Link>
+                  {project.caseStudy  ? (
+                    <Link
+                      href={project.caseStudy}
+                      className="px-8 py-3 bg-white text-black font-bold rounded-full scale-90 group-hover:scale-100 transition-transform duration-500 shadow-xl"
+                    >
+                      View Case Study
+                    </Link>
+                  ) : (
+                    <span className="px-8 py-3 bg-white/90 text-black font-bold rounded-full scale-90 group-hover:scale-100 transition-transform duration-500 shadow-xl cursor-not-allowed">
+                      Case Study Coming Soon
+                    </span>
+                  )}
                 </div>
               </div>
             </motion.div>
