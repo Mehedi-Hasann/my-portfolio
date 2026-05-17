@@ -11,7 +11,7 @@ export default function Projects() {
       title: 'HealthPlus',
       desc: 'An enterprise-grade online medicine shop with role-based access for Customers, Sellers, and Admins.',
       tags: ['Next.js', 'Express.js', 'Prisma', 'PostgreSQL', 'Better Auth','Stripe'],
-      image: '/medi_image.png',
+      image: '/home.png',
       color: 'from-blue-600 to-cyan-400',
       github: 'https://github.com/Mehedi-Hasann/MediStore-Frontend',
       live: 'https://medi-store-one.vercel.app/',
