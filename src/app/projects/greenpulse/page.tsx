@@ -32,7 +32,7 @@ export default function GreenPulseCaseStudy() {
           images={[
             { src: "/greenpulse.png", alt: "Home Page" },
             { src: "/gp_challenges.png", alt: "Challenges Page" },
-            { src: "/gp_about.png", alt: "About Page" },
+            { src: "/leaderboard.png", alt: "Leaderboard Page" },
           ]}
         />
 
