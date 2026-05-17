@@ -8,10 +8,11 @@ type Props = {
   title: string;
   subtitle: string;
   liveLink: string;
-  githubLink: string;
+  githubFrontend: string;
+  githubBackend?: string;
 };
 
-export default function Hero({ title, subtitle, liveLink, githubLink }: Props) {
+export default function Hero({ title, subtitle, liveLink, githubFrontend, githubBackend }: Props) {
   return (
     <section className="relative pt-20 pb-10">
      
@@ -23,11 +24,11 @@ export default function Hero({ title, subtitle, liveLink, githubLink }: Props) {
         transition={{ duration: 0.6 }}
       >
         <Link 
-          href="/" 
+          href="/#projects" 
           className="inline-flex items-center gap-2 text-on-surface-variant hover:text-blue-500 transition-colors mb-10 group"
         >
           <FiArrowLeft className="group-hover:-translate-x-1 transition-transform" />
-          <span>Back to Portfolio</span>
+          <span>Back to Projects</span>
         </Link>
 
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6 font-space-grotesk">
@@ -59,16 +60,30 @@ export default function Hero({ title, subtitle, liveLink, githubLink }: Props) {
             <FiExternalLink />
             Live Demo
           </motion.a>
+          
           <motion.a
-            href={githubLink}
+            href={githubFrontend}
             target="_blank"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="flex items-center gap-2 px-8 py-4 bg-on-surface/5 border border-on-surface/10 font-bold rounded-2xl hover:bg-on-surface/10 transition-all"
           >
             <FiGithub />
-            Source Code
+            {githubBackend ? "Frontend Code" : "Source Code"}
           </motion.a>
+
+          {githubBackend && (
+            <motion.a
+              href={githubBackend}
+              target="_blank"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="flex items-center gap-2 px-8 py-4 bg-on-surface/5 border border-on-surface/10 font-bold rounded-2xl hover:bg-on-surface/10 transition-all"
+            >
+              <FiGithub />
+              Backend Code
+            </motion.a>
+          )}
         </div>
       </motion.div>
     </section>

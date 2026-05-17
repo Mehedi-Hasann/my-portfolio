@@ -5,29 +5,9 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+import { projects } from "@/data/projects";
+
 export default function Projects() {
-  const projects = [
-    {
-      title: 'HealthPlus',
-      desc: 'An enterprise-grade online medicine shop with role-based access for Customers, Sellers, and Admins.',
-      tags: ['Next.js', 'Express.js', 'Prisma', 'PostgreSQL', 'Better Auth','Stripe'],
-      image: '/home.png',
-      color: 'from-blue-600 to-cyan-400',
-      github: 'https://github.com/Mehedi-Hasann/MediStore-Frontend',
-      live: 'https://medi-store-one.vercel.app/',
-      caseStudy: '/projects/healthplus'
-    },
-    {
-      title: 'Green Pulse',
-      desc: 'A comprehensive environmental community platform featuring interactive challenges, user progress tracking and robust administrative dashboards.',
-      tags: ['Next.js', 'Express.js', 'Prisma', 'PostgreSQL', 'Recharts'],
-      image: '/greenpulse.png',
-      color: 'from-green-600 to-emerald-400',
-      github: 'https://github.com/Mehedi-Hasann/green-pulse-frontend',
-      live: 'https://green-pulse-frontend.vercel.app/',
-      caseStudy: '/projects/greenpulse'
-    }
-  ] as const;
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -117,18 +97,12 @@ export default function Projects() {
                 
                 
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 backdrop-blur-[2px] bg-blue-500/5">
-                  {project.caseStudy  ? (
-                    <Link
-                      href={project.caseStudy}
-                      className="px-8 py-3 bg-white text-black font-bold rounded-full scale-90 group-hover:scale-100 transition-transform duration-500 shadow-xl"
-                    >
-                      View Case Study
-                    </Link>
-                  ) : (
-                    <span className="px-8 py-3 bg-white/90 text-black font-bold rounded-full scale-90 group-hover:scale-100 transition-transform duration-500 shadow-xl cursor-not-allowed">
-                      Case Study Coming Soon
-                    </span>
-                  )}
+                  <Link
+                    href={`/projects/${project.id}`}
+                    className="px-8 py-3 bg-white text-black font-bold rounded-full scale-90 group-hover:scale-100 transition-transform duration-500 shadow-xl"
+                  >
+                    View Case Study
+                  </Link>
                 </div>
               </div>
             </motion.div>
@@ -141,7 +115,7 @@ export default function Projects() {
                 </h3>
                 <div className="flex gap-4">
                   <motion.a 
-                    href={project.github}
+                    href={project.githubFrontend}
                     target="_blank"
                     whileHover={{ y: -4, backgroundColor: 'var(--on-surface-variant)', color: 'var(--background)' }}
                     className="flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-on-surface/5 border border-on-surface/10 text-xs font-bold text-on-surface transition-all shadow-lg"
@@ -152,7 +126,7 @@ export default function Projects() {
                     GitHub
                   </motion.a>
                   <motion.a 
-                    href={project.live}
+                    href={project.liveLink}
                     target="_blank"
                     whileHover={{ y: -4, scale: 1.02 }}
                     className="flex items-center gap-2 px-6 py-3 rounded-2xl bg-[#0062ff] border border-blue-400/30 text-xs font-black text-white uppercase tracking-[0.15em] transition-all shadow-[0_10px_30px_-10px_rgba(0,98,255,0.5)] hover:shadow-[0_15px_40px_-10px_rgba(0,98,255,0.6)]"

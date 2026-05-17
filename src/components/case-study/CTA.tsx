@@ -5,10 +5,11 @@ import { FiGithub, FiExternalLink } from "react-icons/fi";
 
 type Props = {
   liveLink: string;
-  githubLink: string;
+  githubFrontend: string;
+  githubBackend?: string;
 };
 
-export default function CTA({ liveLink, githubLink }: Props) {
+export default function CTA({ liveLink, githubFrontend, githubBackend }: Props) {
   return (
     <motion.div 
       initial={{ opacity: 0, scale: 0.9 }}
@@ -41,15 +42,28 @@ export default function CTA({ liveLink, githubLink }: Props) {
         </motion.a>
         
         <motion.a
-          href={githubLink}
+          href={githubFrontend}
           target="_blank"
           whileHover={{ scale: 1.05, y: -5 }}
           whileTap={{ scale: 0.95 }}
           className="flex items-center gap-3 px-10 py-5 bg-on-surface/5 border border-on-surface/10 font-bold rounded-2xl hover:bg-on-surface/10 transition-all"
         >
           <FiGithub className="text-xl" />
-          <span>Explore Source</span>
+          <span>{githubBackend ? "Frontend Repo" : "Explore Source"}</span>
         </motion.a>
+
+        {githubBackend && (
+          <motion.a
+            href={githubBackend}
+            target="_blank"
+            whileHover={{ scale: 1.05, y: -5 }}
+            whileTap={{ scale: 0.95 }}
+            className="flex items-center gap-3 px-10 py-5 bg-on-surface/5 border border-on-surface/10 font-bold rounded-2xl hover:bg-on-surface/10 transition-all"
+          >
+            <FiGithub className="text-xl" />
+            <span>Backend Repo</span>
+          </motion.a>
+        )}
       </div>
     </motion.div>
   );
