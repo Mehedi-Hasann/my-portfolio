@@ -30,6 +30,7 @@ export const projects: Project[] = [
     image: "/home.png",
     liveLink: "https://medi-store-one.vercel.app/",
     githubFrontend: "https://github.com/Mehedi-Hasann/MediStore-Frontend",
+    githubBackend: "https://github.com/Mehedi-Hasann/HealthPlus-Backend",
     images: [
       { src: "/home.png", alt: "Home Page" },
       { src: "/shop.png", alt: "Shop Page" },
