@@ -21,7 +21,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "healthplus",
-    title: "HealthPlus Family",
+    title: "HealthPlus",
     subtitle:
       "An enterprise-grade online medicine shop with role-based access for Customers, Sellers, and Admins.",
     desc: "An enterprise-grade online medicine shop with role-based access for Customers, Sellers, and Admins.",

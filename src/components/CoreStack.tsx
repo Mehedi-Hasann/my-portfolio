@@ -61,12 +61,12 @@ export default function CoreStack() {
   return (
     <section className="relative px-6 overflow-hidden bg-background font-poppins" id="tech">
       <div className="max-w-[1200px] mx-auto">
-        <header className="mb-20 text-center">
+        <header className="mb-12 md:mb-20 text-center">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-5xl md:text-6xl font-bold mb-4 tracking-tight font-space-grotesk text-on-surface"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 md:mb-4 tracking-tight font-space-grotesk text-on-surface"
           >
             Technologies
           </motion.h2>
@@ -75,7 +75,7 @@ export default function CoreStack() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-on-surface-variant text-sm md:text-base uppercase tracking-[0.3em] opacity-70 font-medium"
+            className="text-on-surface-variant text-xs sm:text-sm md:text-base uppercase tracking-[0.2em] md:tracking-[0.3em] opacity-70 font-medium"
           >
             My Technical Arsenal
           </motion.p>
@@ -86,7 +86,7 @@ export default function CoreStack() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-8 md:gap-12 justify-items-center"
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 md:gap-6 lg:gap-8 justify-items-center"
         >
           {techStack.map((tech) => (
             <motion.div
@@ -95,26 +95,26 @@ export default function CoreStack() {
               whileHover={{ y: -8, scale: 1.05 }}
               className="flex flex-col items-center group w-full"
             >
-              <div className={`p-8 rounded-3xl glass-card border border-white/10 transition-all duration-500 group relative overflow-hidden h-full shadow-lg flex items-center justify-center`}>
+              <div className={`p-4 md:p-6 lg:p-8 rounded-xl md:rounded-2xl lg:rounded-3xl glass-card border border-white/10 transition-all duration-500 group relative overflow-hidden h-full shadow-lg flex items-center justify-center`}>
                 <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <span className={`${tech.color} transition-all duration-500 group-hover:scale-110 drop-shadow-sm text-4xl md:text-5xl relative z-10`}>
+                <span className={`${tech.color} transition-all duration-500 group-hover:scale-110 drop-shadow-sm text-3xl md:text-4xl lg:text-5xl relative z-10`}>
                   {tech.icon}
                 </span>
               </div>
 
-              <p className="mt-5 text-xs md:text-sm font-bold text-on-surface-variant group-hover:text-on-surface transition-colors uppercase tracking-[0.1em] text-center opacity-80 group-hover:opacity-100">
+              <p className="mt-2 md:mt-4 lg:mt-5 text-[10px] sm:text-xs md:text-sm font-bold text-on-surface-variant group-hover:text-on-surface transition-colors uppercase tracking-[0.05em] md:tracking-[0.1em] text-center opacity-80 group-hover:opacity-100">
                 {tech.name}
               </p>
             </motion.div>
           ))}
         </motion.div>
 
-        <header className="mt-30 mb-20 text-center">
+        <header className="mt-16 md:mt-30 mb-12 md:mb-20 text-center">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-5xl md:text-6xl font-bold mb-4 tracking-tight font-space-grotesk text-on-surface"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 md:mb-4 tracking-tight font-space-grotesk text-on-surface"
           >
             Skills
           </motion.h2>
@@ -123,7 +123,7 @@ export default function CoreStack() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-on-surface-variant text-sm md:text-base uppercase tracking-[0.3em] opacity-70 font-medium"
+            className="text-on-surface-variant text-xs sm:text-sm md:text-base uppercase tracking-[0.2em] md:tracking-[0.3em] opacity-70 font-medium"
           >
             My Technical Level
           </motion.p>

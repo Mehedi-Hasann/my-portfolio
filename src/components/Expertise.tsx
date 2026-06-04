@@ -68,26 +68,26 @@ export default function Expertise() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8"
       >
         {skills.map((skill, idx) => (
           <motion.div 
             key={idx}
             variants={itemVariants}
             whileHover={{ y: -10, scale: 1.02 }}
-            className="glass-card p-10 rounded-[2.5rem] border border-white/5 relative group transition-all duration-500"
+            className="glass-card p-5 md:p-8 lg:p-10 rounded-xl md:rounded-2xl lg:rounded-[2.5rem] border border-white/5 relative group transition-all duration-500"
           >
-            <div className={`w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-8 ${skill.color} group-hover:shadow-[0_0_20px_rgba(255,255,255,0.05)] transition-all duration-500`}>
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+            <div className={`w-12 h-12 md:w-14 lg:w-16 md:h-14 lg:h-16 rounded-lg md:rounded-xl lg:rounded-2xl bg-white/5 flex items-center justify-center mb-4 md:mb-6 lg:mb-8 ${skill.color} group-hover:shadow-[0_0_20px_rgba(255,255,255,0.05)] transition-all duration-500`}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="md:w-7 md:h-7 lg:w-8 lg:h-8">
                 {skill.icon}
               </svg>
             </div>
-            <h3 className="text-2xl font-bold text-on-surface mb-6 font-space-grotesk tracking-tight group-hover:text-blue-400 transition-colors">
+            <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-on-surface mb-3 md:mb-4 lg:mb-6 font-space-grotesk tracking-tight group-hover:text-blue-400 transition-colors">
               {skill.name}
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2 md:space-y-3">
               {skill.desc.map((item, i) => (
-                <li key={i} className="flex items-center gap-3 text-on-surface-variant text-sm opacity-90 font-bold">
+                <li key={i} className="flex items-center gap-2 md:gap-3 text-on-surface-variant text-xs md:text-sm opacity-90 font-bold">
                   <span className={`w-1.5 h-1.5 rounded-full bg-current ${skill.color}`}></span>
                   {item}
                 </li>

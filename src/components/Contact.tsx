@@ -66,34 +66,34 @@ export default function Contact() {
           </svg>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-start lg:items-center">
           {/* Left Column: Info */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="space-y-12"
+            className="space-y-8 md:space-y-12"
           >
             <div>
-              <h2 className="text-5xl md:text-7xl font-bold mb-8 tracking-tight font-space-grotesk text-on-surface">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-8 tracking-tight font-space-grotesk text-on-surface">
                 Let&apos;s <span className="text-gradient">Collaborate</span>
               </h2>
-              <p className="text-on-surface-variant text-lg md:text-xl opacity-80 leading-relaxed max-w-md">
+              <p className="text-on-surface-variant text-sm sm:text-base md:text-lg lg:text-xl opacity-80 leading-relaxed max-w-md">
                 Have a vision for a project? Let&apos;s architect the future together with precision and passion.
               </p>
             </div>
 
-            <div className="space-y-8">
+            <div className="space-y-6 md:space-y-8">
               {contactInfo.map((info, idx) => (
-                <div key={idx} className="flex items-center gap-6 group">
-                  <div className="w-16 h-16 rounded-2xl glass-card flex items-center justify-center text-blue-400 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] transition-all duration-500">
-                    <svg width="24" height="24" viewBox="0 0 24 24">
+                <div key={idx} className="flex items-center gap-3 md:gap-6 group">
+                  <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl glass-card flex items-center justify-center text-blue-400 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] transition-all duration-500 flex-shrink-0">
+                    <svg width="20" height="20" viewBox="0 0 24 24" className="md:w-6 md:h-6">
                       {info.icon}
                     </svg>
                   </div>
-                  <div>
-                    <p className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.25em] mb-1">{info.label}</p>
-                    <p className="text-on-surface text-lg font-medium group-hover:text-blue-400 transition-colors">{info.value}</p>
+                  <div className="min-w-0">
+                    <p className="text-[8px] sm:text-[10px] font-bold text-slate-500 uppercase tracking-[0.15em] sm:tracking-[0.25em] mb-0.5 md:mb-1">{info.label}</p>
+                    <p className="text-on-surface text-sm sm:text-base md:text-lg font-medium group-hover:text-blue-400 transition-colors truncate sm:truncate-none">{info.value}</p>
                   </div>
                 </div>
               ))}
@@ -111,15 +111,15 @@ export default function Contact() {
               <motion.div 
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="glass-card rounded-[2.5rem] p-12 md:p-16 border border-green-500/20 text-center space-y-6"
+                className="glass-card rounded-2xl md:rounded-[2.5rem] p-6 md:p-12 lg:p-16 border border-green-500/20 text-center space-y-4 md:space-y-6"
               >
-                <div className="w-20 h-20 bg-green-500/10 text-green-500 rounded-full flex items-center justify-center mx-auto mb-8">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-green-500/10 text-green-500 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-8">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="md:w-10 md:h-10">
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>
                 </div>
-                <h3 className="text-3xl font-bold text-on-surface font-space-grotesk">Message Sent!</h3>
-                <p className="text-on-surface-variant text-lg">Thank you for reaching out. I&apos;ll get back to you shortly.</p>
+                <h3 className="text-2xl md:text-3xl font-bold text-on-surface font-space-grotesk">Message Sent!</h3>
+                <p className="text-on-surface-variant text-sm md:text-lg">Thank you for reaching out. I&apos;ll get back to you shortly.</p>
                 <button 
                   onClick={() => setIsSent(false)}
                   className="text-blue-400 font-bold uppercase tracking-widest text-sm hover:text-blue-300 transition-colors pt-4"
@@ -130,44 +130,44 @@ export default function Contact() {
             ) : (
               <form
                 onSubmit={handleSubmit}
-                className="glass-card rounded-[2.5rem] md:p-12 border border-white/10 space-y-8 shadow-2xl relative"
+                className="glass-card rounded-2xl md:rounded-[2.5rem] p-6 md:p-12 border border-white/10 space-y-6 md:space-y-8 shadow-2xl relative"
               >
-                <div className="grid-cols-1 md:grid-cols-2 gap-8 ">
-                  <div className="space-y-3 mb-5">
-                    <label className="text-[10px] font-bold text-slate-500 uppercase tracking-widest px-2">Your Name</label>
+                <div className="md:grid-cols-2 gap-4 md:gap-8">
+                  <div className="space-y-2 md:space-y-3">
+                    <label className="text-[8px] sm:text-[10px] font-bold text-slate-500 uppercase tracking-widest px-2">Your Name</label>
                     <input 
                       required
                       name="name"
-                      className="w-full bg-on-surface/5 border border-on-surface/10 focus:border-blue-500/50 focus:bg-on-surface/10 rounded-2xl px-6 py-4 text-on-surface transition-all outline-none" 
+                      className="w-full bg-on-surface/5 border border-on-surface/10 focus:border-blue-500/50 focus:bg-on-surface/10 rounded-xl md:rounded-2xl px-4 md:px-6 py-3 md:py-4 text-sm md:text-base text-on-surface transition-all outline-none" 
                       placeholder="John Doe" 
                       type="text" 
                     />
                   </div>
-                  <div className="space-y-3">
-                    <label className="text-[10px] font-bold text-slate-500 uppercase tracking-widest px-2">Email Address</label>
+                  <div className="space-y-2 md:space-y-3">
+                    <label className="text-[8px] sm:text-[10px] font-bold text-slate-500 uppercase tracking-widest px-2">Email Address</label>
                     <input 
                       required
                       name="email"
-                      className="w-full bg-on-surface/5 border border-on-surface/10 focus:border-blue-500/50 focus:bg-on-surface/10 rounded-2xl px-6 py-4 text-on-surface transition-all outline-none" 
+                      className="w-full bg-on-surface/5 border border-on-surface/10 focus:border-blue-500/50 focus:bg-on-surface/10 rounded-xl md:rounded-2xl px-4 md:px-6 py-3 md:py-4 text-sm md:text-base text-on-surface transition-all outline-none" 
                       placeholder="john@example.com" 
                       type="email" 
                     />
                   </div>
                 </div>
 
-                <div className="space-y-3">
-                  <label className="text-[10px] font-bold text-slate-500 uppercase tracking-widest px-2">Message</label>
+                <div className="space-y-2 md:space-y-3">
+                  <label className="text-[8px] sm:text-[10px] font-bold text-slate-500 uppercase tracking-widest px-2">Message</label>
                   <textarea 
                     required
                     name="message"
-                    className="w-full bg-on-surface/5 border border-on-surface/10 focus:border-blue-500/50 focus:bg-on-surface/10 rounded-2xl px-6 py-4 text-on-surface transition-all outline-none resize-none" 
+                    className="w-full bg-on-surface/5 border border-on-surface/10 focus:border-blue-500/50 focus:bg-on-surface/10 rounded-xl md:rounded-2xl px-4 md:px-6 py-3 md:py-4 text-sm md:text-base text-on-surface transition-all outline-none resize-none" 
                     placeholder="How can I help you today?" 
-                    rows={5}
+                    rows={4}
                   ></textarea>
                 </div>
 
                 {error && (
-                  <p className="text-red-400 text-sm px-2 animate-pulse">{error}</p>
+                  <p className="text-red-400 text-xs sm:text-sm px-2 animate-pulse">{error}</p>
                 )}
                 
                 <motion.button 
@@ -175,7 +175,7 @@ export default function Contact() {
                   whileTap={{ scale: isPending ? 1 : 0.98 }}
                   type="submit"
                   disabled={isPending}
-                  className={`w-full ${isPending ? 'bg-blue-600/50 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-500'} text-white font-bold py-5 px-8 rounded-2xl transition-all duration-300 shadow-xl text-lg flex items-center justify-center gap-3`}
+                  className={`w-full ${isPending ? 'bg-blue-600/50 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-500'} text-white font-bold py-4 md:py-5 px-6 md:px-8 rounded-xl md:rounded-2xl transition-all duration-300 shadow-xl text-sm md:text-lg flex items-center justify-center gap-2 md:gap-3`}
                 >
                   {isPending ? (
                     <>

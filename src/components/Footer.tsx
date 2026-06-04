@@ -28,32 +28,32 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative py-20 px-6 md:px-12 lg:px-24 max-w-[1400px] mx-auto border-t border-white/5 overflow-hidden font-poppins">
+    <footer className="relative py-12 md:py-20 px-6 md:px-12 lg:px-24 max-w-[1400px] mx-auto border-t border-white/5 overflow-hidden font-poppins">
       {/* Decorative Blur */}
       <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-[100px] -z-10"></div>
 
-      <div className="flex flex-col md:flex-row justify-between items-center gap-12">
-        <div className="flex flex-col items-center md:items-start gap-4">
-          <span className="text-2xl font-bold text-on-surface font-space-grotesk tracking-tighter uppercase">
+      <div className="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-12">
+        <div className="flex flex-col items-center md:items-start gap-2 md:gap-4">
+          <span className="text-xl md:text-2xl font-bold text-on-surface font-space-grotesk tracking-tighter uppercase">
             Mehedi <span className="text-blue-500">Hasan</span>
           </span>
-          <p className="text-xs text-on-surface-variant opacity-60 tracking-widest uppercase">
+          <p className="text-[10px] md:text-xs text-on-surface-variant opacity-60 tracking-widest uppercase">
             © 2024 Engineering the Digital Frontier
           </p>
         </div>
 
-        <nav className="flex gap-10">
+        <nav className="flex gap-4 md:gap-6 lg:gap-10 flex-wrap justify-center md:justify-end">
           {socialLinks.map((social) => (
             <motion.a 
               key={social.name} 
               href={social.href}
               whileHover={{ y: -5, color: "#3b82f6" }}
-              className="text-on-surface-variant transition-colors flex items-center font-bold text-2xl gap-3 tracking-widest uppercase text-[10px]"
+              className="text-on-surface-variant transition-colors flex items-center font-bold gap-1 md:gap-3 tracking-widest uppercase text-[8px] md:text-[10px] hover:text-blue-400"
             >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="md:w-5 md:h-5">
                 {social.icon}
               </svg>
-              {social.name}
+              <span className="hidden sm:inline">{social.name}</span>
             </motion.a>
           ))}
         </nav>

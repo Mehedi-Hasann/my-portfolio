@@ -34,22 +34,22 @@ export default function Projects() {
       <div className="absolute top-1/4 -right-24 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[120px] -z-10"></div>
       <div className="absolute bottom-1/4 -left-24 w-[400px] h-[400px] bg-pink-500/5 rounded-full blur-[100px] -z-10"></div>
       
-      <header className="mb-24 text-center">
+      <header className="mb-12 md:mb-24 text-center">
 
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-5xl md:text-8xl font-bold mb-8 tracking-tight font-space-grotesk text-on-surface"
+          className="text-3xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mb-4 md:mb-8 tracking-tight font-space-grotesk text-on-surface"
         >
-          Selected <span className="text-gradient">Creations</span>
+          Selected <span className="text-gradient">Projects</span>
         </motion.h2>
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="text-on-surface-variant max-w-2xl mx-auto text-lg md:text-xl opacity-80 leading-relaxed"
+          className="text-on-surface-variant max-w-2xl mx-auto text-sm sm:text-base md:text-lg lg:text-xl opacity-80 leading-relaxed px-2"
         >
           A curated showcase of architectural precision, high-impact engineering, and seamless user experiences.
         </motion.p>
@@ -60,7 +60,7 @@ export default function Projects() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
-        className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20"
+        className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16"
       >
         {projects.map((project, idx) => (
           <motion.div 
@@ -109,18 +109,18 @@ export default function Projects() {
 
             {/* Content Container */}
             <div className="mt-10 px-4 flex-1 flex flex-col">
-              <div className="flex items-center justify-between mb-8">
-                <h3 className="text-3xl md:text-4xl font-bold text-on-surface font-space-grotesk tracking-tight group-hover:text-blue-400 transition-colors">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-8 mb-8">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-on-surface font-space-grotesk tracking-tight group-hover:text-blue-400 transition-colors">
                   {project.title}
                 </h3>
-                <div className="flex gap-4">
+                <div className="flex flex-wrap gap-2 sm:gap-4">
                   <motion.a 
                     href={project.githubFrontend}
                     target="_blank"
                     whileHover={{ y: -4, backgroundColor: 'var(--on-surface-variant)', color: 'var(--background)' }}
-                    className="flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-on-surface/5 border border-on-surface/10 text-xs font-bold text-on-surface transition-all shadow-lg"
+                    className="flex items-center gap-1 sm:gap-2 px-3 sm:px-5 py-2 sm:py-2.5 rounded-lg sm:rounded-2xl bg-on-surface/5 border border-on-surface/10 text-[10px] sm:text-xs font-bold text-on-surface transition-all shadow-lg"
                   >
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="sm:w-5 sm:h-5">
                       <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                     </svg>
                     GitHub
@@ -129,9 +129,9 @@ export default function Projects() {
                     href={project.liveLink}
                     target="_blank"
                     whileHover={{ y: -4, scale: 1.02 }}
-                    className="flex items-center gap-2 px-6 py-3 rounded-2xl bg-[#0062ff] border border-blue-400/30 text-xs font-black text-white uppercase tracking-[0.15em] transition-all shadow-[0_10px_30px_-10px_rgba(0,98,255,0.5)] hover:shadow-[0_15px_40px_-10px_rgba(0,98,255,0.6)]"
+                    className="flex items-center gap-1 sm:gap-2 px-3 sm:px-6 py-2 sm:py-3 rounded-lg sm:rounded-2xl bg-[#0062ff] border border-blue-400/30 text-[10px] sm:text-xs font-black text-white uppercase tracking-[0.08em] sm:tracking-[0.15em] transition-all shadow-[0_10px_30px_-10px_rgba(0,98,255,0.5)] hover:shadow-[0_15px_40px_-10px_rgba(0,98,255,0.6)]"
                   >
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="sm:w-[18px] sm:h-[18px]">
                       <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                       <polyline points="15 3 21 3 21 9"></polyline>
                       <line x1="10" y1="14" x2="21" y2="3"></line>

@@ -11,29 +11,29 @@ export default function About() {
       {/* Background Orbs */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-500/5 rounded-full blur-[120px] -z-10"></div>
 
-      <header className="text-center mb-24">
+      <header className="text-center mb-12 md:mb-24">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-5xl md:text-7xl font-bold mb-8 tracking-tight font-space-grotesk text-on-surface"
+          className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-8 tracking-tight font-space-grotesk text-on-surface"
         >
           About <span className="text-gradient">Me</span>
         </motion.h2>
         <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-pink-600 mx-auto rounded-full"></div>
       </header>
 
-      <div className="grid lg:grid-cols-12 gap-16 items-start">
+      <div className="grid lg:grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-start">
         {/* Left: Identity Card */}
         <motion.aside 
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="lg:col-span-4 glass-card rounded-[3.5rem] p-12 border border-white/10 relative group overflow-hidden"
+          className="lg:col-span-4 glass-card rounded-2xl md:rounded-[3.5rem] p-6 md:p-12 border border-white/10 relative group overflow-hidden"
         >
           <div className="absolute inset-0 bg-gradient-to-b from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
           
-          <div className="relative w-full aspect-square rounded-[3rem] overflow-hidden mb-12 glass-card border border-white/10 group">
+          <div className="relative w-full aspect-square rounded-2xl md:rounded-[3rem] overflow-hidden mb-6 md:mb-12 glass-card border border-white/10 group">
             <Image 
               src="/portfolio_img.png" 
               alt="Mehedi Hasan"
@@ -45,17 +45,17 @@ export default function About() {
             <div className="absolute inset-0 bg-gradient-to-t from-background/40 dark:from-background/80 via-transparent to-transparent pointer-events-none"></div>
           </div>
 
-          <div className="flex items-center gap-3 mb-6">
+          <div className="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
             <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-            <span className="text-xs text-gray-300 font-bold uppercase tracking-[0.2em]">Available for work</span>
+            <span className="text-[10px] md:text-xs text-gray-300 font-bold uppercase tracking-[0.2em]">Available for work</span>
           </div>
 
-          <h3 className="text-3xl font-bold tracking-tight mb-4 text-on-surface uppercase font-space-grotesk">Md Mehedi Hasan</h3>
-          <p className="text-on-surface-variant text-sm leading-relaxed mb-8 opacity-80 italic">
+          <h3 className="text-2xl md:text-3xl font-bold tracking-tight mb-2 md:mb-4 text-on-surface uppercase font-space-grotesk">Md Mehedi Hasan</h3>
+          <p className="text-on-surface-variant text-xs md:text-sm leading-relaxed mb-6 md:mb-8 opacity-80 italic">
             &quot;Passionate about creating efficient code and elegant user experiences.&quot;
           </p>
 
-          <div className="flex flex-wrap items-center gap-4 relative z-10">
+          <div className="flex flex-wrap items-center gap-2 md:gap-4 relative z-10">
             {[
               {name: 'Facebook',icon: <path d="M22 12a10 10 0 1 0-11.5 9.9v-7H7.5v-3h3V9.5c0-3 1.8-4.7 4.6-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 1-2 2v2.4h3.4l-.5 3h-2.9v7A10 10 0 0 0 22 12z" fill="currentColor"/>,href: 'https://www.facebook.com/Mehedihasa67/',},
               {name: 'LinkedIn',icon: <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" fill="currentColor"/>, href: 'https://www.linkedin.com/in/mehedi-hasan-35a681324/' },
@@ -68,20 +68,18 @@ export default function About() {
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ y: -5, backgroundColor: 'rgba(59, 130, 246, 0.2)', borderColor: '#3b82f6' }}
-                className="w-12 h-12 rounded-2xl flex items-center justify-center border border-white/5 bg-white/5 text-gray-400 transition-colors"
+                className="w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-2xl flex items-center justify-center border border-white/5 bg-white/5 text-gray-400 transition-colors"
               >
-                <svg width="20" height="20" viewBox="0 0 24 24">
-                  {social.icon}
-                </svg>
+                {social.icon}
               </motion.a>
               
             ))}
             <Link href="#contact">
               <motion.div
                 whileHover={{ y: -5, backgroundColor: 'rgba(59, 130, 246, 0.2)', borderColor: '#3b82f6' }}
-                className="w-12 h-12 rounded-2xl flex items-center justify-center border border-white/5 bg-white/5 text-gray-400 transition-colors"
+                className="w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-2xl flex items-center justify-center border border-white/5 bg-white/5 text-gray-400 transition-colors"
               >
-                <svg width="20" height="20" viewBox="0 0 24 24">
+                <svg width="18" height="18" viewBox="0 0 24 24" className="md:w-5 md:h-5">
                   <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/>
                 </svg>
               </motion.div>
@@ -92,36 +90,36 @@ export default function About() {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="pt-8"
+            className="pt-6 md:pt-8 w-full"
           >
-            <Link
+            <a
               href="/Mehedi_Hasan.pdf" 
               target="_blank"
-              className="w-full inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-pink-600 text-white font-bold rounded-2xl shadow-lg hover:shadow-blue-500/20 transition-all hover:scale-[1.02] active:scale-95 text-sm uppercase tracking-widest gap-3"
+              className="w-full inline-flex items-center justify-center px-4 md:px-8 py-3 md:py-4 bg-gradient-to-r from-blue-600 to-pink-600 text-white font-bold rounded-xl md:rounded-2xl shadow-lg hover:shadow-blue-500/20 transition-all hover:scale-[1.02] active:scale-95 text-xs md:text-sm uppercase tracking-widest gap-2 md:gap-3"
             >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="md:w-5 md:h-5">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                 <polyline points="7 10 12 15 17 10"></polyline>
                 <line x1="12" y1="15" x2="12" y2="3"></line>
               </svg>
               Download Resume
-            </Link>
+            </a>
           </motion.div>
         </motion.aside>
         
 
         {/* Right: Content Area */}
-        <div className="lg:col-span-8 flex flex-col gap-8">
+        <div className="lg:col-span-8 flex flex-col gap-6 md:gap-8">
           {/* Bio Area */}
           <motion.article 
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="glass-card rounded-[3.5rem] p-8 md:p-16 border border-white/5 relative overflow-hidden group"
+            className="glass-card rounded-2xl md:rounded-[3.5rem] p-6 md:p-8 lg:p-16 border border-white/5 relative overflow-hidden group"
           >
             <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 rounded-full blur-[100px] -z-10 group-hover:bg-blue-500/10 transition-colors duration-700"></div>
-            <h4 className="text-3xl md:text-5xl font-bold mb-10 text-on-surface leading-tight font-space-grotesk">Professional Profile</h4>
-            <div className="space-y-5 text-on-surface-variant text-lg md:text-xl leading-relaxed opacity-90">
+            <h4 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-10 text-on-surface leading-tight font-space-grotesk">Professional Profile</h4>
+            <div className="space-y-3 md:space-y-5 text-on-surface-variant text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed opacity-90">
               <p>
                 I am a Computer Science student at <span className="text-blue-400 font-semibold"> Chittagong University of Engineering & Technology (CUET)</span> with a strong foundation in competitive programming and backend development.
                 
